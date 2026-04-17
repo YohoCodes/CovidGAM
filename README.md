@@ -6,23 +6,17 @@
 
 The script fits a **Penalized Poisson Deconvolution** model where daily deaths ($y_i$) on day $t_i$ are modeled as:
 
-$$
-y_i \sim \text{Poi}(\mu_i)
-$$
+$$y_i \sim \text{Poi}(\mu_i)$$
 
 The expected deaths $\mu_i$ are calculated as a convolution of the infection curve $f(t)$ and the probability function for the interval from infection to death $\pi(j)$:
 
-$$
-\mu_i = \sum_{j=1}^{\min(29+i, 80)} f(t_i - j)\pi(j)
-$$
+$$\mu_i = \sum_{j=1}^{\min(29+i, 80)} f(t_i - j)\pi(j)$$
 
 ### Key Components:
 * **Infection Curve ($f$):** Represented using **B-splines** ($f(t) = \sum b_k(t)\beta_k$) to allow for a flexible, smooth functional form.
 * **Positivity Constraint:** Parameters are re-expressed as $\beta_k = \exp(\gamma_k)$ to ensure estimated infections remain strictly positive.
 * **Smoothing Penalty:** To prevent overfitting, the model minimizes a penalized negative log-likelihood using a squared difference penalty on the spline coefficients:
-    $$
-    P = \frac{\lambda}{2} \sum_{k=2}^{K-1}(\beta_{k-1} - 2\beta_k + \beta_{k+1})^2
-    $$
+    $$P = \frac{\lambda}{2} \sum_{k=2}^{K-1}(\beta_{k-1} - 2\beta_k + \beta_{k+1})^2$$
 * **Parameter Selection:** The optimal smoothing parameter $\lambda$ is chosen by minimizing the **Bayesian Information Criterion (BIC)**.
 
 
