@@ -37,6 +37,8 @@ install.packages("ggplot2")
 
 ## Files and Data
 
+**`CovidGAM.pdf`** is a compiled report with the main visualizations and results. Open it for a ready-made view of the analysis without running R.
+
 The script expects a data file (default: `engcov.txt`) in the working directory. The data must include:
 * `julian`: Day of the year 2020.
 * `nhs`: Daily death counts in English hospitals.
