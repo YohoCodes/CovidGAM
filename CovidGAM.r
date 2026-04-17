@@ -2,24 +2,6 @@
 ### PROJECT 3: SMOOTH DECONVOLUTION ###
 #######################################
 
-### Contributions of each member ###
-
-# Isaac's Contributions: Worked on optimization of the smoothing parameter, lambda, by means 
-# of the minimize_BIC, best_fit and BIC functions. Also, I helped refactor code for improved 
-# readability and parameter flexibility, so it could potentially be configured for different 
-# datasets.
-
-# Eoghan's Contributions: Worked on the following functions: init_model_matrices,
-# pnll, gll, fd, np_boot, the finite-difference comparison and plotting the bootstrap
-# CI.
-
-# Seán's Contributions: Worked on the following functions: init_model_matrices, pnll, gll, 
-# and plotted model with lambda = 5e-5. Helped with final plot also.  
-
-
-# Github repo link: https://github.com/YohoCodes/StatProj4_ISE.git
-
-
 ### Overview & high level outline ###
 
 # In this project we first fit a deconvolution model to Covid-19 death data for 
@@ -41,7 +23,7 @@
 ### Please Set your Working Directory Below ###
 ###############################################
 
-#setwd('') # <<<<<<<< User's Working Directory
+# setwd('') # <<<<<<<< User's Working Directory
 
 # Importing library for spline design
 library(splines)
@@ -554,4 +536,4 @@ Op_with_CI <- ggplot(data = NULL, aes(x = t_config, y = data.frame(M_1$f_hat))) 
   
   theme_minimal()
 
-Op_with_CI 
+Op_with_CI
