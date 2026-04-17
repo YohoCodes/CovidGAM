@@ -11,7 +11,6 @@
 *.out
 __pycache__/
 CovidGAM_results/
-*.pdf
 *.png
 # Ignore data files that are outputs or temp
 *.csv
@@ -23,3 +22,5 @@ scratch_*
 test_*
 # VSCode settings
 .vscode/
+
+CovidGAM.rmd
